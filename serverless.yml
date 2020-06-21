@@ -26,7 +26,8 @@ package:
     - .gitignore
     - .git/**
     - .vscode/**
-
+  include:
+    - images/**
 
 functions:
   meme:
