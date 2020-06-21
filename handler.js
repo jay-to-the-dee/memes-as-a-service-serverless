@@ -1,7 +1,5 @@
-'use strict';
-
-const sharp = require('sharp');
 const fs = require('fs');
+const sharp = require('sharp');
 
 const { IMAGES_DIR, TEXT_SIZE, TEXT_PADDING } = process.env;
 
@@ -10,8 +8,7 @@ const getImages = () => fs.readdirSync(IMAGES_DIR);
 const parseImage = image => getImages().find(file => file.indexOf(image) === 0);
 const random = arr => arr[Math.floor(Math.random() * arr.length)];
 const randomImage = () => random(getImages());
-
-function svgText(text) {
+const svgText = text => {
   return new Buffer(`<svg height="40" width="100%">
   <text x="0" y="40" font-size="${TEXT_SIZE}" font-family="Impact, Arial, Helvetica, sans-serif"
   style="fill: #000; stroke: #fff;">
@@ -19,7 +16,7 @@ function svgText(text) {
   </svg>`);
 }
 
-module.exports.handle = (event, context, callback) => {
+module.exports.meme = (event, context, callback) => {
   const input = event.queryStringParameters || {};
 
   const top = parseText(input.top);

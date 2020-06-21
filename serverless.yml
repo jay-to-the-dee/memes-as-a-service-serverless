@@ -10,9 +10,8 @@ service: memes-as-a-service
 provider:
   name: scaleway
   runtime: node10
-  stage: prod
   env:
-    IMAGES_DIR: ./function/images/
+    IMAGES_DIR: ./images/
     TEXT_SIZE: "50"
     TEXT_PADDING: "40"
 
@@ -31,7 +30,7 @@ package:
 
 functions:
   meme:
-    handler: handler.handle
+    handler: handler.meme
     # events:
     #   - http:
     #       path: /
