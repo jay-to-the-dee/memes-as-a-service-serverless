@@ -11,10 +11,10 @@ provider:
   name: scaleway
   runtime: node10
   stage: prod
-  environment:
+  env:
     IMAGES_DIR: ./images/
-    TEXT_SIZE: 50
-    TEXT_PADDING: 40
+    TEXT_SIZE: "50"
+    TEXT_PADDING: "40"
 
 plugins:
   - serverless-scaleway-functions
@@ -26,6 +26,7 @@ package:
     - .gitignore
     - .git/**
     - .vscode/**
+
 
 functions:
   meme:
