@@ -12,7 +12,7 @@ provider:
   runtime: node10
   stage: prod
   env:
-    IMAGES_DIR: ./images/
+    IMAGES_DIR: ./function/images/
     TEXT_SIZE: "50"
     TEXT_PADDING: "40"
 
