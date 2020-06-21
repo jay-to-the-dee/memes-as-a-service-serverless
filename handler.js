@@ -19,7 +19,7 @@ function svgText(text) {
   </svg>`);
 }
 
-module.exports.meme = (event, context, callback) => {
+module.exports.handle = (event, context, callback) => {
   const input = event.queryStringParameters || {};
 
   const top = parseText(input.top);

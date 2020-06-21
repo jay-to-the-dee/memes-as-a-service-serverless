@@ -31,8 +31,9 @@ package:
 
 functions:
   meme:
-    handler: handler.meme
+    handler: handler.handle
     # events:
     #   - http:
     #       path: /
     #       method: get
+    memoryLimit: 2048
