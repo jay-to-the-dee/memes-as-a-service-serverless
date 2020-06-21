@@ -13,7 +13,7 @@ const randomImage = () => random(getImages());
 
 function svgText(text) {
   return new Buffer(`<svg height="40" width="100%">
-  <text x="0" y="40" font-size="48" font-family="Impact, Arial, Helvetica, sans-serif"
+  <text x="0" y="40" font-size="${TEXT_SIZE}" font-family="Impact, Arial, Helvetica, sans-serif"
   style="fill: #000; stroke: #fff;">
   ${text}</text>
   </svg>`);
@@ -49,7 +49,4 @@ module.exports.meme = (event, context, callback) => {
         isBase64Encoded: true,
       });
     });
-
-
-
 };
