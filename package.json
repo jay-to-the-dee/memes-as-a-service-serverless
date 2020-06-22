@@ -13,6 +13,7 @@
     "serverless-scaleway-functions": "^0.1.17"
   },
   "dependencies": {
+    "escape-html": "^1.0.3",
     "sharp": "^0.25.4"
   }
 }

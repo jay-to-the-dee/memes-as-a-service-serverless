@@ -1,5 +1,6 @@
 const fs = require('fs');
 const sharp = require('sharp');
+const escapeHtml = require('escape-html');
 
 const { IMAGES_DIR, TEXT_SIZE, TEXT_PADDING } = process.env;
 
@@ -9,10 +10,11 @@ const parseImage = image => getImages().find(file => file.indexOf(image) === 0);
 const random = arr => arr[Math.floor(Math.random() * arr.length)];
 const randomImage = () => random(getImages());
 const svgText = text => {
+  const escapedText = escapeHtml(text);
   return new Buffer(`<svg height="40" width="100%">
   <text x="0" y="40" font-size="${TEXT_SIZE}" font-family="Impact, Arial, Helvetica, sans-serif"
   style="fill: #000; stroke: #fff;">
-  ${text}</text>
+  ${escapedText}</text>
   </svg>`);
 }
 
